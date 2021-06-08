@@ -13,19 +13,19 @@ const checkCarId =  async (req, res, next) => {
 
 const checkCarPayload = (req, res, next) => {
   if (!req.body.vin) {
-    res.status(404).json({
+    res.status(400).json({
       message: `vin is missing`
       })
   } else if (!req.body.make) {
-    res.status(404).json({
+    res.status(400).json({
       message: `make is missing`
       })
   } else if (!req.body.model) {
-    res.status(404).json({
+    res.status(400).json({
       message: `model is missing`
       })
   } else if (!req.body.mileage) {
-    res.status(404).json({
+    res.status(400).json({
       message: `mileage is missing`
       })
   }
