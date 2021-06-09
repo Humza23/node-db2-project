@@ -40,7 +40,7 @@ const checkVinNumberValid = (req, res, next) => {
 }
 
 const checkVinNumberUnique = (req, res, next) => {
-  if (req.body.vin) {
+  if (!req.body.vin) {
     res.status(400).json({ message: `vin ${req.body.vin} already exists` })
   }
   next()
